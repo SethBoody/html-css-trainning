@@ -1,0 +1,127 @@
+body{
+    text-align: center;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr /*repeat(2,40%)*/;
+    grid-auto-rows: minmax(200px,auto);/* to resize the row to fit the content*/
+    grid-gap: 10px 5px;
+    justify-items: start;
+}
+.grid-container > .item{
+    padding: 30px;
+    background: #333;
+    color: #fff;
+    margin: 5px 0;
+}
+/*.item1{
+    grid-column-start:1 ;
+    grid-column-start:3 ;
+    or
+    grid-column: 1/3;*/
+
+/* grid Area*/
+.grid-area{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav main main "
+        "aside aside main main"
+        "footer footer footer footer"/* the same name of the css grid-area &$&*/
+    ;
+}
+.grid-area > *{
+    padding: 30px;
+    background-color: #333;
+    color: #fff;
+}
+
+header{
+    grid-area: header;/* you can put any name you want*/
+}
+
+nav{
+    grid-area: nav;
+}
+    
+main{
+    grid-area: main;
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area:footer;/*&$&*/
+}
+
+/* selectors*/
+/*pesoude classes selector
+    -any
+        :-webkit-any(article , section , nav)h2{
+
+        }
+    
+    -
+    spicial fo form
+    checked
+    disabled
+    enabled-- input:enabled{}
+    empty--for an emoty element-- p:empty{}    
+
+    in-range--input:in-range
+    out-of-range--input:out-of-range--> input type=number.
+
+    input:valid
+    input:invalid
+    
+    input:required
+    input:optional-->we dont have to write it in html
+
+    input:read-only
+    input:read-write--> we dont have to write it in html
+
+    :target--> /html/ <a href="#link"> <p id="link">P</p>//--->/css/ p{display:none} :target{display:block}
+    :-moz-user-disabled-->p{:-moz-user-disabled:all or none}
+    -------
+    :hover
+    :active
+    :focus
+    -
+    not--> p:not(.first)--> كل ال بي ما عدا الي ماخذ كلاس فيرست
+    input:placeholder-shown--.it works ehwn the placeholder is exist in html for the element
+    -
+    :root--> mean the html 
+    :lang()--> it used when we give the element in html a lang atribute--> //<p lang="en"></p>//--> :lang(en) in css//
+    -
+        **********************************************
+        IMPORTANT SELECTORS::::::::::::::
+         :last-child
+         :first-child
+         -
+         :first-of-type
+         :last-of-type
+         -
+         only-child
+         only-of type
+         -
+         nth-child(1 to n or even or odd or 2n 3n 2n+1 ... )
+         nth-of-type()--.يبدا العد من فوق
+         -
+         nth-last-child()
+         nth-last-of-type()-->يبدا العد من تحت 
+         -
+
+*/
+
+/* 
+pesude element selector
+
+ -first-line
+ -first-leter
+ ::after, ::before
+ ::selection
+
+*/

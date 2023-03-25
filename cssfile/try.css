@@ -1,0 +1,255 @@
+.background{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border: 5px dotted green;
+    background-image: url(practice1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    /*background-origin:content-box ;*/
+    background-clip: content-box;
+}
+.box-shadow{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    margin: auto;
+    /*-moz-box-shadow:h-shadow v-shadow blur spread color inset;*/
+    box-shadow: 5px 5px 2px 3px #faa , 5px 5px 2px 3px #000 inset;
+}
+.text-shadow{
+    /* text-shadow: h-sahdow vshadow blur color*/
+    text-shadow: 2px 2px 2px #f1a;
+    font-size: 50px;
+}
+/* gradient==linear, radial*/
+.gradient{
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    background-color: #000;
+    /*background: -webkit-linear-gradient( direction , firstcolor , thierdcolor, ....);*/
+    /*background: -webkit-linear-gradient(top , yellow , green);*/
+    /*background: -webkit-radial-gradient(20% 20%, circle or farthest-corner or closest-corner, firstcolor , secondcolor )*/
+    background: -webkit-radial-gradient(15% 40% , circle , yellow , green);
+}
+
+.text-overflow{
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;/* ... */
+}
+.word-wrap{
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    word-wrap: break-word;
+}
+.word-break{
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    word-break: break-all;
+}
+.transform-2d{
+    /* translate , rotate*/
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    transform:translate (10px , 20px);
+    transform:rotate(10deg);
+}
+.transform-scale{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    margin: 100px;
+    transform: scale(2,2);
+}
+.transform-skew{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    transform: skew(25deg ,50deg);
+}
+.matrix{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    /* matrix :( scaleX , skewY , skewX , scaleY, transX , transY )*/
+    transform: matrix(1 ,2.1, -2, 1, 10, 10);/* dont forget vendor prefix  -moz-  -webkit- -ms- -o-*/
+    margin-top: 100px;
+}
+body{
+    perspective: 600px;/* to show the effect of 3d through the parent*/
+    perspective-origin: left top;/* from what point to see it*/
+}
+.trans-rotate-3d{/* same as scale3d*/
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    margin: 200px auto;
+    transform-origin: top left;/*from what point to start the action*/
+    transform: translate3d(10px,30px,50px);
+    transform: rotateX(30deg);
+}
+.matrix-3d{/* thire 16 index, instade of that (search in google "matrix3d css" choose the second link 'generator)*/
+    width: 100px;
+    height: 100px;
+    background-color: #f8d;
+
+}
+/*.transform-style{/* delete the perespictive from the body*
+    margin: 100px auto;
+    width: 600px;
+    height: 600px;
+    background-color: #f50;
+    transform: rotateX(60deg) rotateZ(40deg);
+    transform-style: preserve-3d;
+}
+.child1{
+    width: 100px;
+    height: 170px;
+    background-color: aqua;
+    transform: translateZ(20px) rotateX(20deg);
+}
+.child2{
+    width: 200px;
+    height: 300px;
+    background-color: #f1a;
+    transform: translateZ(50px) rotateY(40deg);
+}*/
+.backface-visibility{
+    width: 300px;
+    height: 500px;
+    transition: all .5s;
+    margin: 50px auto;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.backface-visibility:hover{
+    transform: rotateY(180deg);
+}
+p{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    font-size: 30px;
+    color: #fff;
+}
+.frontface{
+    background-color: blue;
+    z-index: 2;
+}
+.backface{
+    background-color: green;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.outline-offset{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    outline: 1px solid #f00;
+    outline-offset: 20px;
+}
+.transition{
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    /*transition-property: background ;
+    transition-duration: 1s;*/
+    transition-timing-function: ease /* linear يستمر على نفس المستوى
+                                   ease يبدا بالراحه يسرع بالوسط ينهي بالراحه
+                                   ease-in يبدا بالراحه و ينهي بالسرعه 
+                                   ease-outيبدا بسرعه ينهي بالراحه
+                                   ease-in-out يبدا بالراحه و ينهي بالراحه
+                                   step(3,start or end)*/;
+    transition-delay: 1s ;/* الفترة قبل البدايه بالتاثير*/
+    /* transition: property duration function delay*/
+    margin: 30px;
+}
+.transition:hover{
+    background-color: aqua;
+}
+.animation{
+    /*
+        animation-name: ;
+        animation-duration: ;
+        animation-timing-function: ;
+        animation-delay: ;
+        animation-iteration-count:3  ;
+        animation-direction: reverse or altenat or altrnat-revers;
+        animation-fill-mode: ;
+        animation-play-state: running or pusde;
+        animation: change 2s ease 2s 3 normal none running;
+
+        Search of Animation CSS3 generator
+    or  Search of css3 keyframs  
+    */
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    background-color: #f50;
+    animation-name:change ;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes change {/* dont forget the -webkit- ... */
+    /* 
+        from{ background:#fff; margin:100px;}
+        to{ background:#000; margin:200px}
+    */
+    0%{background-color: #f00;}
+    25%{background-color: aqua;}
+    50%{background-color: #f1a;}
+    75%{background-color: #080;}
+    100%{background-color:#f00;}
+}
+.animation1{
+    width: 100px;
+    height: 100px;
+    background-color: #f50;
+    animation-name:change1 ;
+    animation-duration: 5s;
+    animation-fill-mode: backwards /* forwards or both*/;
+    position:absolute;
+}
+@keyframes change1{
+    0%{left: 50px; background-color: #000;}
+    25%{left: 100px;}
+    50%{left: 150px;}
+    75%{left: 200px;}
+    100%{left: 250px;}
+}
+.multi-columns{
+    /*
+        column-count
+        column-gap
+        column-rule-width
+        column-rule-style
+        column-rule-color
+        column-rule
+        column-span
+        column-width
+        columns:  column-count column-gap;
+    */
+    margin: 100px;
+        column-count:3;
+        column-gap:60px;
+        column-rule-width:3px;
+        column-rule-style:solid;
+        column-rule-color:#f00;
+       /* column-rule:3 solid #f00;*/
+       
+        column-width:300px;
+            
+}
+h1{
+    column-span: all;
+}

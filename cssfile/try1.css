@@ -1,0 +1,57 @@
+body{
+    background: #aaa;
+}
+.flex-content{
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+.flex-container{
+    background-color: #fff;
+    display: flex;
+    margin: auto;
+    /*flex-direction: row-reverse;*/
+    /*flex-wrap: wrap;*/
+    /*flex: flex-grow flex-shrink flex-basis;*/
+    /* flex-flow: flex-direction flex-wrap*/
+}
+.flex-item{
+    height: 200px;
+    min-width: 300px;
+    /* flex-basis -- its same~ as min-width but it dose not make scroll */
+    /* flex-basis ~ min-width , min-height
+        -if flex-flow is row then the flex-basis is initial width.
+        -if flex-flow is column then the flex-basis is initial height.
+
+    */
+    float: left;
+    /* justify-content: [flex-start , flix-end , space-between,center,space-around]it work on main-axis.
+        algin-items:[flex-start , flex-end,center ,stretch,base-line]it work on cross-axis.
+            -if flex-flow is on row 
+                main axis for justify-content x-axis
+                cross axis is y-axis
+            
+            -if flex-flow is on column 
+                main axis is y-axis
+                cross axis is x-axis
+    */
+    /* algin-content:  ;  it appers when we use flex-wrap   تفصل بين العناصر التي تنزل لتحت والي بتضل ع نفس ما هي*/
+}
+.first{
+    background-color: green;
+    /*flex-grow: 1;*/
+    /*flex-shrink: 1;*/
+    /* algin-self: flex-end;*/
+    /*order:1; لترتيب العناصر حسب الرقم*/
+}
+.second{
+    background-color: #f00;
+    /*flex-grow: 1;*/
+    /*flex-shrink: 2;*/
+}
+.third{
+    background-color: yellow;
+    /*flex-grow: 1;*/
+    /*flex-shrink: 3;*/
+}
+/* تطبيق عليه فيديو رقم 19 اخر 20 دقيقه*/
